@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lababook/theme.dart';
 //import 'package:lababook/theme.dart';
 import 'package:lababook/widgets/fancy_bottom_navigation/fancy_bottom_navigation.dart';
+//import 'package:lababook/theme.dart';
+//import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lababook/app_content.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -12,48 +16,70 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.blueAccent,
-          elevation: 0,
-          actions: <Widget>[],
-          bottom: TabBar(
-              labelColor: Colors.blueAccent,
-              unselectedLabelColor: Colors.white,
-              indicatorSize: TabBarIndicatorSize.label,
-              indicator: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
-                  color: Colors.white),
-              tabs: [
-                Tab(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text("Dashboard"),
+      body: AppContent(
+          child: SafeArea(
+        //top: true,
+        bottom: true,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 0),
+          child: DefaultTabController(
+            length: 2,
+            child: Scaffold(
+              appBar: AppBar(
+                //automaticallyImplyLeading: false,
+                title: Text("Lababook"),
+                leading: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.menu,
                   ),
                 ),
-                Tab(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text("Aktivitas"),
-                  ),
-                ),
+                elevation: 0,
+                backgroundColor: MyColors.primaryColor,
+                actions: <Widget>[],
+                bottom: TabBar(
+                    labelColor: MyColors.primaryColor,
+                    unselectedLabelColor: Colors.white,
+                    indicatorSize: TabBarIndicatorSize.label,
+                    indicator: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10)),
+                        color: Colors.white),
+                    tabs: [
+                      Tab(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text("Dashboard"),
+                        ),
+                      ),
+                      Tab(
+                        child: Align(
+                            alignment: Alignment.center,
+                            child: Text("Aktivitas")),
+                      ),
+                    ]),
+              ),
+              body: TabBarView(children: [
+                Text(""),
+                Text(""),
+                //Icon(Icons.book),
+                //Icon(Icons.book),
               ]),
+            ),
+          ),
         ),
-        body: TabBarView(children: [
-          Icon(Icons.apps),
-          Icon(Icons.movie),
-          //Icon(Icons.games),
-        ]),
-        bottomNavigationBar: FancyBottomNavigation(
-          tabs: [
-            TabData(iconData: Icons.home, title: "Beranda"),
-            TabData(iconData: Icons.book, title: "Laporan"),
-            TabData(iconData: Icons.more, title: "More"),
-          ],
-          onTabChangedListener: (position) {},
-        ));
+      )),
+      bottomNavigationBar: FancyBottomNavigation(
+        tabs: [
+          TabData(iconData: Icons.home, title: "Beranda"),
+          TabData(iconData: Icons.book, title: "Laporan"),
+          TabData(iconData: Icons.more, title: "More"),
+        ],
+        onTabChangedListener: (position) {},
+      ),
+    );
+
     //),
     // body: Center(
     //   child: Container(

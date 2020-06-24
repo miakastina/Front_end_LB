@@ -103,9 +103,9 @@ class _LoginPageState extends State<LoginPage> {
                                   const BorderRadius.all(Radius.circular(4))),
                           controller: phoneController,
                           clearButtonMode: OverlayVisibilityMode.editing,
-                          keyboardType: TextInputType.phone,
+                          keyboardType: TextInputType.text,
                           maxLines: 1,
-                          placeholder: '+62...',
+                          placeholder: 'E-mail/No. HP',
                         ),
                       ),
                       Container(
