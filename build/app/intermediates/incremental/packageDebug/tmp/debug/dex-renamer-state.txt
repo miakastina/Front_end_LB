@@ -1,4 +1,4 @@
-#Wed Jun 24 03:52:55 ICT 2020
-base.0=C\:\\Kerja\\lababook\\lababook\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Thu Jun 25 04:56:35 ICT 2020
+base.0=C\:\\Users\\Dell\\Documents\\GitHub\\Front_end_LB\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

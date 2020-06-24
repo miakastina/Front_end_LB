@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 //import 'package:lababook/pages/otp_page.dart';
 //import 'package:lababook/pages/splash_page.dart';
 //import 'package:lababook/pages/dashboard.dart';
-import 'package:lababook/pages/registrasi/registrasi.dart';
+import 'package:lababook/pages/activity.dart';
+//import 'package:lababook/pages/registrasi/registrasi.dart';
 
 void main() {
   runApp(App());
@@ -32,9 +33,10 @@ class _AppState extends State<App> {
           //HomePage(),
           //LoginPage(),
           //OtpPage(),
-          //SplashPage(),
-          //  DashBoard(),
-          RegisPage(),
+          // SplashPage(),
+          // DashBoard(),
+          Activity(),
+      //RegisPage(),
     );
   }
 }
